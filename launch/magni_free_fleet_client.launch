@@ -1,0 +1,11 @@
+<launch>
+  <node name="free_fleet_client_ros1" pkg="free_fleet_client_ros1" type="free_fleet_client_ros1" output="screen">
+    <param name="fleet_name" type="string" value="tinyRobot" />
+    <param name="robot_name" command="bash -c &quot;hostname | tr -d '\n' &quot; " />
+    <param name="dds_domain" type="int" value="8" />
+    <param name="max_dist_to_first_waypoint" type="double" value="10.0" />
+    <param name="level_name" type="string" value="L1" />
+  </node>
+</launch>
+
+

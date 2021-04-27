@@ -1,0 +1,31 @@
+<launch>
+    <include file="$(find sick_tim)/launch/sick_tim571_2050101.launch">
+    </include>
+
+    <node name="base_link_to_base_footprint_static_transform" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0 0 0 0 base_link base_footprint" />
+    <node name="base_footprint_to_laser_static_transform" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0.05 0 0 0 base_link laser" />
+    <node name="laser_to_laser_mount_static_transform" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0.05 0 0 0 laser laser_mount_link" />
+
+    <node pkg="amcl" type="amcl" name="amcl" output="screen">
+        <rosparam command="load" file="$(find magni_nav_ros1)/param/amcl.yaml" />
+    </node>
+
+    <include file="$(find magni_nav_ros1)/launch/map_server.launch">
+        <arg name="map_yaml" value="$(find magni_nav_ros1)/maps/map.yaml"/>
+    </include>
+
+    <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
+        <rosparam command="load" file="$(find magni_nav_ros1)/param/costmap_common_params.yaml" ns="local_costmap" />
+        <rosparam command="load" file="$(find magni_nav_ros1)/param/costmap_common_params.yaml" ns="global_costmap" />
+        <rosparam command="load" file="$(find magni_nav_ros1)/param/local_costmap_params.yaml" />
+        <rosparam command="load" file="$(find magni_nav_ros1)/param/global_costmap_params.yaml" />
+        <rosparam command="load" file="$(find magni_nav_ros1)/param/dwa_local_planner_params.yaml"/>
+        <rosparam command="load" file="$(find magni_nav_ros1)/param/base_local_planner_params.yaml"/>
+        <rosparam command="load" file="$(find magni_nav_ros1)/param/move_base_params.yaml"/>
+    </node>
+
+    <include file="$(find magni_nav_ros1)/launch/magni_free_fleet_client.launch">
+    </include>
+    
+    <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py"/>
+</launch>

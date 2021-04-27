@@ -1,0 +1,5 @@
+ubiquity_motor:
+  controller_loop_rate: 100
+
+ubiquity_velocity_controller:
+  wheel_separation: 0.33

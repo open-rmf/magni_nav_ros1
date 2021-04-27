@@ -1,0 +1,7 @@
+tags
+*.lock
+*.temp
+*.swp
+
+__pycache__
+*.pyc
