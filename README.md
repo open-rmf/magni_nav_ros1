@@ -12,7 +12,7 @@ You will have to modify the [launch files](/launch/magni.launch) accordingly.
 ## Software Setup
 Assuming that you have ROS1 installation on your device, and sourced:
 ```
-sudo apt install python-catkin tools python-vcstool python-rosdep avahi-daemon
+sudo apt install python-catkin-tools python-vcstool python-rosdep avahi-daemon
 source /opt/ros/kinetic/setup.bash
 ```
 
