@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>magni_nav_ros1</name>
-  <version>0.0.0</version>
-  <description>Launch files for magni_45 package</description>
+  <version>0.0.1</version>
+  <description>ROS1 navstack for Magni (Ubiquity Robotics)</description>
 
   <maintainer email="cnboonhan@openrobotics.org">Charayaphan Nakorn Boon Han</maintainer>
 
@@ -16,7 +16,9 @@
   <depend>ros-kinetic-map-server</depend>
   <depend>ros-kinetic-tf2-web-republisher</depend>
   <depend>ros-kinetic-diagnostic-aggregator</depend>
-
+  <depend>ros-kinetic-sick-tim</depend>
+  <depend>ros-kinetic-sick-scan</depend>
+  <depend>ros-kinetic-teleop-twist-keyboard</depend>
   <export>
   </export>
 </package>
