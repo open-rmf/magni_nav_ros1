@@ -9,7 +9,13 @@
   <license>Apache 2.0</license>
 
   <buildtool_depend>catkin</buildtool_depend>
-
+  <depend>ros-kinetic-ros-base</depend>
+  <depend>ros-kinetic-move-base</depend>
+  <depend>ros-kinetic-dwa-local-planner</depend>
+  <depend>ros-kinetic-amcl</depend>
+  <depend>ros-kinetic-map-server</depend>
+  <depend>ros-kinetic-tf2-web-republisher</depend>
+  <depend>ros-kinetic-diagnostic-aggregator</depend>
 
   <export>
   </export>
