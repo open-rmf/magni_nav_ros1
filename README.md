@@ -50,6 +50,7 @@ export ROS_MASTER_URI=http://ubiquityrobot.local:11311
 
 Finally, we can launch a rviz visualization on your workstation
 ```
+# Source your ROS1 distribution
 rosrun rviz rviz 
 ```
 And open the file `magni.rviz` [here](/param/magni.rviz).
