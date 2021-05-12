@@ -12,6 +12,7 @@ You will have to modify the [launch files](/launch/magni.launch) accordingly.
 ## Software Setup
 Assuming that you have ROS1 installation on your device, and sourced:
 ```
+sudo apt update
 sudo apt install python-catkin-tools python-vcstool python-rosdep avahi-daemon
 source /opt/ros/kinetic/setup.bash
 ```
@@ -23,9 +24,9 @@ cd $HOME/catkin_ws
 git clone https://github.com/open-rmf/magni_nav_ros1 src/magni_nav_ros1
 
 # Install dependencies
-sudo rosdep init
-rosdep update
-rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -yr
+sudo apt install ros-kinetic-ros-base ros-kinetic-move-base ros-kinetic-dwa-local-planner ros-kinetic-amcl \
+  ros-kinetic-map-server ros-kinetic-tf2-web-republisher ros-kinetic-diagnostic-aggregator ros-kinetic-sick-tim \
+  ros-kinetic-sick-scan ros-kinetic-teleop-twist-keyboard
 
 catkin build
 ```
