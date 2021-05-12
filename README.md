@@ -9,6 +9,8 @@ Tested on a Magni running Ubuntu 16.04, ROS1 Kinetic ( Based on the Ubiquity Rob
 We use a `sick_tim571` as LiDAR sensor, but you can use whatever LiDAR setup you want; 
 You will have to modify the [launch files](/launch/magni.launch) accordingly. 
 
+You will also need to install `udev` rules following [here](https://github.com/uos/sick_tim#setting-up-udev-rules).
+
 ## Software Setup
 Assuming that you have ROS1 installation on your device, and sourced:
 ```
