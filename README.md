@@ -15,6 +15,7 @@ You will also need to install `udev` rules following [here](https://github.com/u
 Assuming that you have ROS1 installation on your device, and sourced:
 ```
 sudo apt update
+sudo systemctl disable NetworkManager-wait-online.service
 sudo apt install python-catkin-tools python-vcstool python-rosdep avahi-daemon
 source /opt/ros/kinetic/setup.bash
 ```
