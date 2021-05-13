@@ -34,7 +34,7 @@ catkin build
 ```
 
 ## Edit robot navigation map
-Replace the [map files](/maps) with your own navigation map.
+Replace the [map files](/maps) with your own navigation map. You will have to use the 
 
 ## Connect to Magni
 On both your workstation and robot, set this in your `~/.bashrc`:
@@ -54,3 +54,21 @@ Finally, we can launch a rviz visualization on your workstation
 rosrun rviz rviz 
 ```
 And open the file `magni.rviz` [here](/param/magni.rviz).
+
+## Run the magni navigation stack
+```
+# You should be able to ping the robot from your workstation
+ping ubiquityrobot.local
+
+# ssh into the robot
+ssh ubuntu@ubiquityrobot.local
+
+# Check for deserialization errors 
+sudo systemctl status magni-base.service  # If errors are present, restart this service: sudo systemctl restart magni-base.service
+
+source /opt/ros/kinetic/setup.bash
+source $HOME/catkin_ws/devel/setup.bash
+roslaunch magni_nav_ros1 magni.launch
+```
+You should see Rviz update with the robot navigation map.
+Keyboard Telop is running on the robot as well, so you can drive the robot around using the ijlm keys. ( The navstack terminal must be in focus )
