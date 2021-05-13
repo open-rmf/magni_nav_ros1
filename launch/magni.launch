@@ -23,9 +23,6 @@
         <rosparam command="load" file="$(find magni_nav_ros1)/param/base_local_planner_params.yaml"/>
         <rosparam command="load" file="$(find magni_nav_ros1)/param/move_base_params.yaml"/>
     </node>
-
-    <include file="$(find magni_nav_ros1)/launch/magni_free_fleet_client.launch">
-    </include>
     
     <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py"/>
 </launch>
