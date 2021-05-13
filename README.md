@@ -16,6 +16,7 @@ Assuming that you have ROS1 installation on your device, and sourced:
 ```
 sudo apt update
 sudo systemctl disable NetworkManager-wait-online.service
+# Change auto eth0 to allow-hotplug eth0 in /etc/network/interfaces 
 sudo apt install python-catkin-tools python-vcstool python-rosdep avahi-daemon
 source /opt/ros/kinetic/setup.bash
 ```
