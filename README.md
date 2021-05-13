@@ -43,7 +43,7 @@ export ROS_HOSTNAME=`hostname`.local
 ```
 This will use mdns for robot discovery, which is way more awesome than using ip addresses.
 
-Your workstation will need the following as well ( replace ubiquityrobot with whatever your robot hostname is )
+Your workstation will need the following as well in the `~/.bashrc` ( replace ubiquityrobot with whatever your robot hostname is )
 ```
 export ROS_MASTER_URI=http://ubiquityrobot.local:11311
 ```
