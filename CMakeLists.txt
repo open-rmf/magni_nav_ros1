@@ -9,3 +9,5 @@ catkin_package(
 install(DIRECTORY launch param
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+
+install(DIRECTORY cartographer_configs DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
