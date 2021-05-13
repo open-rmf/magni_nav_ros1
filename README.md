@@ -22,6 +22,7 @@ source /opt/ros/kinetic/setup.bash
 We will begin by installing all necessary dependencies.
 ```
 cd $HOME/catkin_ws
+rm -r build devel
 
 git clone https://github.com/open-rmf/magni_nav_ros1 src/magni_nav_ros1
 
