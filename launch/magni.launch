@@ -1,4 +1,6 @@
 <launch>
+    <arg name="map_yaml" default="$(find magni_nav_ros1)/maps/map.yaml"/>
+
     <include file="$(find sick_tim)/launch/sick_tim571_2050101.launch">
     </include>
 
@@ -11,7 +13,7 @@
     </node>
 
     <include file="$(find magni_nav_ros1)/launch/map_server.launch">
-        <arg name="map_yaml" value="$(find magni_nav_ros1)/maps/map.yaml"/>
+        <arg name="map_yaml" value="$(arg map_yaml)" />
     </include>
 
     <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
